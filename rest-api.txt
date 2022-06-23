@@ -1,0 +1,17 @@
+GET All Restaurants /restaurants
+GET One Restaurant /restaurants/{id}
+
+GET All Menus /menus
+GET One Menu /menus/${id}
+
+GET All Menus by Restaurant /restaurants/{id}/menus
+GET One Menu by Restaurant /restaurants/{id}/menus/{id}
+
+POST One Restaurant /restaurants
+POST One Menu /menus
+
+PUT One Restaurant /restaurants/{id}
+PUT One Menu /menus/{id}
+
+DELETE One Restaurant /restaurants/{id}
+DELETE One Menu /menus/{id}
