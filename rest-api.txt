@@ -1,17 +1,18 @@
+Restaurant
 GET All Restaurants /restaurants
-GET One Restaurant /restaurants/{id}
+POST One Restaurant /restaurants
 
-GET All Menus /menus
+GET One Restaurant /restaurants/{id}
+PUT One Restaurant /restaurants/{id}
+DELETE One Restaurant /restaurants/{id}
+
+Menu
+GET All Menus /menus -> niche use case, probably for Data team
 GET One Menu /menus/${id}
 
 GET All Menus by Restaurant /restaurants/{id}/menus
 GET One Menu by Restaurant /restaurants/{id}/menus/{id}
-
-POST One Restaurant /restaurants
-POST One Menu /menus
-
-PUT One Restaurant /restaurants/{id}
-PUT One Menu /menus/{id}
-
-DELETE One Restaurant /restaurants/{id}
-DELETE One Menu /menus/{id}
+PUT One Menu by Restaurant /restaurants/{id}/menus/{id}
+DELETE One Menu by Restaurant /restaurants/{id}/menus/{id}
+*Note: there is no POST /menus, PUT | DELETE /menus/{id},
+because in order to create a menu, we MUST FIRST create a restaurant.
