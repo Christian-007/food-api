@@ -2,7 +2,6 @@ package menu
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -96,7 +95,6 @@ func (h *HttpHandler) getAll(w http.ResponseWriter, r *http.Request) {
 
 func (h *HttpHandler) getAllByRestaurant(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
-	fmt.Printf(id)
 	menus, err := h.repository.GetAllByRestaurant(r.Context(), id)
 
 	if err != nil {
