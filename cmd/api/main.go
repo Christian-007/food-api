@@ -24,16 +24,15 @@ func main() {
 	}
 
 	// restaurant
-	// restaurantRepository := restaurant.NewRepositoryInMemory()
 	restaurantRepository := restaurant.NewRepositoryGorm(db)
 	restaurantHandler := restaurant.NewHttpHandler(restaurantRepository)
-	// restaurantHandler.RegisterTo(router)
 	router.Mount("/restaurants", restaurantHandler.Routes())
 
+	// menu
 	menuRepository := menu.NewRepositoryGorm(db)
 	menuHandler := menu.NewHttpHandler(menuRepository)
 	router.Mount("/menus", menuHandler.Routes())
-	router.Mount("/restaurants/{id}/menus", menuHandler.SubRoutes())
+	router.Mount("/restaurants/{restaurantId}/menus", menuHandler.SubRoutes())
 
 	err = http.ListenAndServe(":8080", router)
 	if err != nil {

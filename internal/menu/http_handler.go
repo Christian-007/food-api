@@ -22,10 +22,8 @@ func NewHttpHandler(repository Repository) *HttpHandler {
 func (h *HttpHandler) Routes() chi.Router {
 	router := chi.NewRouter()
 	
-	router.Post("/", h.add)
 	router.Get("/", h.getAll)
 	router.Get("/{id}", h.get)
-	router.Delete("/{id}", h.remove)
 
 	return router
 }
@@ -34,7 +32,9 @@ func (h *HttpHandler) SubRoutes() chi.Router {
 	router := chi.NewRouter()
 	
 	router.Get("/", h.getAllByRestaurant)
+	router.Post("/", h.add)
 	router.Get("/{id}", h.get)
+	router.Delete("/{id}", h.remove)
 
 	return router
 }
