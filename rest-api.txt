@@ -11,8 +11,10 @@ GET All Menus /menus -> niche use case, probably for Data team
 GET One Menu /menus/${id}
 
 GET All Menus by Restaurant /restaurants/{id}/menus
+POST One Menu by Restaurant /restaurants/{id}/menus
 GET One Menu by Restaurant /restaurants/{id}/menus/{id}
 PUT One Menu by Restaurant /restaurants/{id}/menus/{id}
 DELETE One Menu by Restaurant /restaurants/{id}/menus/{id}
-*Note: there is no POST /menus, PUT | DELETE /menus/{id},
+
+*Note: there is no POST /menus, PUT or DELETE /menus/{id},
 because in order to create a menu, we MUST FIRST create a restaurant.
